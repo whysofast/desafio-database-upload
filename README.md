@@ -12,3 +12,14 @@ Learnings :
     @JoinColumn({ name: 'provider_id' })
     provider: User;
 ```
+ 3. When the return of a function is a Promise, to 'extract' it's content, an "await" is needed.
+ 
+For exemple:
+`
+  const transactions = this.find();
+` -> transactions is a 'Promise<Transactions[]>'
+
+`
+const transactions = await this.find();
+` 
+-> transactions is a 'Transactions[]'
